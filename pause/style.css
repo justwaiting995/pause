@@ -1,0 +1,231 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, serif;
+    color: #444;
+    overflow: hidden;
+}
+
+/* Background blur */
+.background {
+    position: fixed;
+    inset: 0;
+    background-image: url("pool/back_sneak.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(8px);
+    transform: scale(1.05);
+    z-index: -2;
+}
+
+
+/* .overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(255,255,255,0.35);
+    z-index: -1;
+} */
+
+/* Header */
+/* header {
+    height: 12vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header h1 {
+    font-weight: 400;
+    letter-spacing: 4px;
+} */
+ header {
+    height: 15vh;              /* slightly bigger */
+    display: flex;
+    align-items: flex-end;     /* push text downward */
+    justify-content: center;
+    padding-bottom: 5px;      /* fine tuning */
+}
+
+header h1 {
+    font-weight: 400;
+    letter-spacing: 4px;
+}
+
+/* Main */
+main {
+    height: 88vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+
+/* Caption */
+#caption {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: rgba(255,255,255,0.8);
+    border-radius: 8px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Arrows */
+
+
+
+
+
+
+
+
+
+
+/* .viewer {
+    position: relative;
+    width: 90vw;
+    max-width: 1200px;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} */
+ .viewer {
+    position: relative;
+    width: 90vw;
+    max-width: 1200px;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Card stays centered */
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Image constraints */
+/* .card img {
+    max-height: 65vh;
+    max-width: 100%;
+    object-fit: contain;
+} */
+
+ .card {
+    display: flex;
+    flex-direction: column;   /* IMPORTANT */
+    align-items: center;
+    justify-content: center;
+}
+
+/* #caption {
+    margin-top: 18px;
+    padding: 10px 18px;
+    background: rgba(255,255,255,0.85);
+    border-radius: 12px;
+    font-size: 14px;
+    max-width: 70%;
+    text-align: center;
+    backdrop-filter: blur(6px);
+} */
+
+/* Arrows now absolutely positioned */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(6px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+#prev {
+    left: 20px;
+}
+
+#next {
+    right: 20px;
+}
+
+.arrow:hover {
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* Frame around image */
+.frame {
+    padding: 12px;
+    background: white;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 4px;   /* rectangular but slightly soft */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+/* Image styling */
+/* .frame img {
+    display: block;
+    max-height: 65vh;
+    max-width: 100%;
+    object-fit: contain;
+    border-radius: 10px;  /* curved image corners */
+/* } */ 
+
+.frame img {
+    display: block;
+    max-height: 65vh;
+    max-width: 100%;
+    object-fit: contain;
+    border-radius: 10px;
+    opacity: 1;
+    transition: opacity 0.6s ease;
+}
+
+.frame img {
+    transform: scale(1);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-out {
+    opacity: 0;
+    transform: scale(0.98);
+}
+.fade-out {
+    opacity: 0;
+}
+
+#caption {
+    margin-top: 18px;
+    padding: 10px 18px;
+    background: rgba(255,255,255,0.85);
+    border-radius: 12px;
+    font-size: 14px;
+    max-width: 70%;
+    text-align: center;
+    backdrop-filter: blur(6px);
+    opacity: 1;
+    transition: opacity 0.6s ease;
+}
+
+.caption-fade-out {
+    opacity: 0;
+}
